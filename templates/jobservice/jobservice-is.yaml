@@ -2,7 +2,7 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  name: "{{ template "harbor.jobservice" . }}"
+  name: "harbor-jobservice"
 spec:
   lookupPolicy:
     local: false
