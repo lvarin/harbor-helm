@@ -21,6 +21,9 @@ spec:
         - name: init-ldif
           configMap:
             name: openldap-init-ldif
+        - name: schema-ldif
+          configMap:
+            name: openldap-schema-ldif
       containers:
         - name: openldap
           image: image-registry.openshift-image-registry.svc:5000/satama-test/openldap-okd:latest
@@ -43,9 +46,15 @@ spec:
               value: cn=admin,dc=example,dc=org
             - name: LDAP_LOGLEVEL
               value: "2"
+            - name: LDAP_CUSTOM_SCHEMA_DIR
+              value: /schemas
+            - name: BITNAMI_DEBUG
+              value: "true"
           volumeMounts:
             - name: ldap-data
               mountPath: /bitnami/openldap
             - name: init-ldif
               mountPath: /ldifs/
+            - name: schema-ldif
+              mountPath: /schemas/
       restartPolicy: Always
