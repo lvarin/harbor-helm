@@ -1,3 +1,4 @@
+{{- if .Values.ldap.local }}
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
@@ -30,3 +31,4 @@ spec:
     type: Docker
   successfulBuildsHistoryLimit: 5
 status: {}
+{{- end -}}

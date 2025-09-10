@@ -15,7 +15,7 @@ spec:
   runPolicy: Serial
   source:
     git:
-      uri: https://github.com/lvarin/harbor-ldaps-sync
+      uri: {{ .Values.ldap.sync.git }}
     type: Git
   strategy:
     dockerStrategy:

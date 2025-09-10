@@ -1,3 +1,4 @@
+{{- if .Values.ldap.local }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -58,3 +59,4 @@ spec:
             - name: schema-ldif
               mountPath: /schemas/
       restartPolicy: Always
+{{- end -}}

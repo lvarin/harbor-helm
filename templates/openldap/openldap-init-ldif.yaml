@@ -1,3 +1,4 @@
+{{- if .Values.ldap.local }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -181,3 +182,4 @@ data:
     memberOf: cn=project201,ou=commercial,ou=external,ou=projects,ou=idm,dc=example,dc=org
     CSCUserName: agonzale
     mail: alvaro.gonzalez@csc.fi
+{{- end -}}

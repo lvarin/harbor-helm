@@ -1,3 +1,4 @@
+{{- if .Values.ldap.local }}
 apiVersion: v1
 data:
   CSC-schema.ldif: |
@@ -37,3 +38,4 @@ data:
 kind: ConfigMap
 metadata:
   name: openldap-schema-ldif
+{{- end -}}
