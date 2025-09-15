@@ -16,7 +16,7 @@ curl -X 'PUT' \
   -d@satama-test.oidc.yaml
 
 curl -X 'PUT' \
-  'https://satama-test.csc.fi/api/v2.0/configurations' \
+  'https://satama.csc.fi/api/v2.0/configurations' \
   -H 'Content-Type: application/json' \
   -H "authorization: Basic $AUTH" \
   -w "satama: %{http_code}\n" \
