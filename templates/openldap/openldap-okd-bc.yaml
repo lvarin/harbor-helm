@@ -1,15 +1,14 @@
 {{- if .Values.ldap.local }}
-apiVersion: build.openshift.io/v1
 kind: BuildConfig
+apiVersion: build.openshift.io/v1
 metadata:
   name: openldap-okd
 spec:
   failedBuildsHistoryLimit: 5
-  nodeSelector: null
   output:
     to:
       kind: ImageStreamTag
-      name: openldap-okd:latest
+      name: 'openldap-okd:latest'
   postCommit: {}
   resources: {}
   runPolicy: Serial
@@ -30,5 +29,8 @@ spec:
         name: docker.io/bitnami/openldap
     type: Docker
   successfulBuildsHistoryLimit: 5
+  triggers:
+    - type: ImageChange
+    - type: ConfigChange
 status: {}
 {{- end -}}

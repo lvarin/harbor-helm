@@ -22,4 +22,7 @@ spec:
       dockerfilePath: Dockerfile
     type: Docker
   successfulBuildsHistoryLimit: 5
+  triggers:
+    - type: ImageChange
+    - type: ConfigChange
 {{- end -}}
