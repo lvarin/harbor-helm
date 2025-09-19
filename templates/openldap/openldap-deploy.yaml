@@ -27,7 +27,7 @@ spec:
             name: openldap-schema-ldif
       containers:
         - name: openldap
-          image: image-registry.openshift-image-registry.svc:5000/satama-test/openldap-okd:latest
+          image: image-registry.openshift-image-registry.svc:5000/{{ .Release.Namespace }}/openldap-okd:latest
           env:
             - name: LDAP_PORT_NUMBER
               value: "1389"
